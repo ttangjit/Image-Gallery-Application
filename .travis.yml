@@ -1,0 +1,20 @@
+language: java
+jdk:
+- oraclejdk8
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: ttangjit@andrew.cmu.edu
+  password:
+    secure: NR+3PUOpTtq701meR7Urqa6Vvc9jCpx8bsIffs89yhxz+9CF70KIoMl0Zuf5W3Ovs38GWhrCpTDMHs08YDTlI4BeixCy2REYtaflng2k1BqcuIbkrbPG0217CeRp3S9BSzV48Xv8MCwW97nvsLPfM4uVzwgRwV1OVUkfaTxnDsf9oJpWzmV8o4AwVSvO7Ls90jFZ6Wyx1+zLdYDkUh5uFGenpodFj8GaWdITorp0XVQlykUsPBpcPke2E4BBHUheNOBY1BUIsJtel7wNgjGwSrIMyJVAZV+SGuHv174ejyLlTYh0Km72wqYdMnZLYHkxIw8rHPAB51AbIGXAFk5HcrfFebim+s55PkQUvYKuZZYLpzGBZ2t4IsEAriVKYrq67K4V+hAM3mE7Hh6LcAxxFOqzhBfZvxLhW5S7YaX3vs8GXWhKmjCqnmE4rYF1uWHujC7GRUHiH046bhwH7z600JwwRRs+XkPMJEal9kWez5ZdCLGg7H/9JTe4fN75CuWxd9JidEw+da0e2Q1LRLb/nL0xTfCw4ndpUQaYflYObEBJ2jurzNTiLahMDO6m4mjbkjkZLD3hTADU5ZzWbOcKBb5jJ0tNhDPPPZcoG/sA5zjVIVClh28Ijo/AgQWNXBEnL4ZnzG6qNhoG6ZhgcmIfVPFdjLZwNPMI7cDh2UBAa1Q=
+  organization: ttangjit-org
+  space: development
+  on:
+    repo: ttangjit/Image-Gallery-Application
