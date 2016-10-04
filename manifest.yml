@@ -1,7 +1,7 @@
 ---
 applications:
 - name: image-gallery-0.1.0.jar
-  path: ./build/libs
+  path: ./build/libs/image-gallery-0.1.0.jar
   host: my-images-jah
   memory: 512M
   instances: 1
